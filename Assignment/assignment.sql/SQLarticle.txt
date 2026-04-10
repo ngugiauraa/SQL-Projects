@@ -1,0 +1,81 @@
+SQL WEEK 1, ARTICLE;
+Jesse Ngugi.
+MY INTERACTION WITH DDL, DML, FILTERING AND TRANSFORMING DATA 
+WITH SQL
+
+This week in our data science and analytics course, we focused on the foundational commands of 
+SQL and how they help manage and analyse data. Below is a clear overview of what I learned and 
+applied in the “Nairobi Academy” assignment. 
+What are DDL and DML?
+DDL (Data Definition Language) is used to define and manage the structure of the database. It deals 
+with creating, modifying, or deleting the “blueprint” of tables and other objects. The main DDL 
+command is CREATE, along with ALTER and DROP.
+DML (Data Manipulation Language) is used to work with the actual data stored inside the tables. It 
+allows us to add, change, or remove records. The key DML commands are INSERT, UPDATE, DELETE, 
+and SELECT.
+Main difference:
+1.	DDL changes the structure of the database (e.g., creating a new table), while DML works 
+with the data inside those tables. 
+2.	DDL commands are usually permanent and affect the whole table, whereas DML changes 
+can often be undone with a transaction rollback.
+How I used CREATE, INSERT, UPDATE, and DELETE in my project
+*	CREATE: I used CREATE TABLE to build the students, subjects and exam_results tables. I 
+defined columns such as student_id, first_name, last_name, class, and marks with the 
+correct data types.
+*	INSERT: With DML, I added student records, subjects taught and exam results into the tables 
+using INSERT INTO (table name) (column names in order of data)
+           VALUES()
+*	UPDATE: I practised modifying existing data, for example updating a student’s marks or 
+changing their class using UPDATE ... SET ... WHERE 
+e.g;. Q12: Esther Akinyi has moved from Nakuru to Nairobi. Write an UPDATE statement to 
+change her city. (Her student_id is 5)
+*	DELETE: I used DELETE FROM ... WHERE to remove specific records, such as students who 
+had withdrawn or incorrect test entries.
+e.g;. Q14. The exam result with result_id 9 has been cancelled by the school. Write a DELETE 
+statement to remove it from the exam_results table.
+
+These commands helped me build the database from scratch and keep the data accurate.
+How filtering with the WHERE clause works
+The WHERE clause is used with SELECT, UPDATE, and DELETE to return or affect only the rows that 
+meet certain conditions. It makes queries precise and powerful. Some useful operators I used 
+include:
+*	= ? equal to (e.g., WHERE class = 'Form 3')
+*	> or >= ? greater than / greater than or equal to (e.g., WHERE marks >= 80)
+*	BETWEEN ? values within a range (e.g., WHERE marks BETWEEN 60 AND 79)
+*	IN ? matches any value in a list (e.g., WHERE class IN ('Form 3', 'Form 4'))
+*	LIKE ? pattern matching (e.g., WHERE first_name LIKE 'A%' for names starting with A)
+Combining these with AND and OR allows very specific filtering.
+How CASE WHEN helps in Transforming Data
+CASE WHEN is a very useful SQL feature for creating new columns based on conditions.
+Though I think I drifted off when this part was being taught in class??I inquired from GROK and this 
+is how I understood it.
+It works like an “if-then-else” statement. In this assignment I used it to:
+*	Label exam results with grades (Distinction, Merit, Pass, Fail) based on marks.
+*	Classify students as Senior or Junior based on their form/class.
+ 
+Example from the project:
+SECTION C - CASE WHEN
+Q9. Write a query using CASE WHEN to label each exam result with a grade description:
+*	'Distinction' if marks >= 80
+*	'Merit' if marks >= 60
+*	'Pass' if marks >= 40
+*	'Fail' if marks below 40
+Call the new column performance.
+Q10. Write a query using CASE WHEN to label each student as:
+*	'Senior' if they are in Form 3 or Form 4
+*	'Junior' if they are in Form 2 or Form 1
+Call the new column student_level. Show the student's first name, last name, class, and 
+student_level in your result.
+This was the part where I had a rough time ??though I think I managed to do it well I think.
+CASE WHEN always ends with END, and the new column is named using AS.  It transforms raw data 
+into meaningful categories without changing the original table.
+ 
+This week was a bit challenging for me because I missed the first class. I had to teach myself the basic 
+introduction to SQL during the second class, which put me a little behind. The CASE WHEN statement 
+is still challenging-ish for me, getting the conditions in the right order and remembering to always 
+end with END and use AS for the column name needs some practice. Other than that I found it really 
+interesting because it lets you create useful new insights directly in a query. Overall, I enjoyed seeing 
+how all the commands work together to build and analyse a real database.
+I’m now more confident with DDL/DML and filtering, and I look forward to practising CASE WHEN 
+more in the coming weeks.
+ 
